@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Accordion from './components/Accordion'
+import Dropdown from './components/Dropdown'
 import Search from './components/Search'
+import Translate from './components/Translate'
 
-const App = () => {
 
     const items = [
         {
@@ -19,11 +20,33 @@ const App = () => {
         }
     ]
 
-    return (
-        <div>
-           <Search/>
-        </div>
-    )
-}
+    const options = [
+        {
+            label:'The Color is Red',
+            value:'red'
+        },
+        {
+            label:'The Color is Green',
+            value:'green'
+        },
+        {
+            label:'The color is blue',
+            value:'blue'
+        }
+    ]
 
-export default App
+    export default () => {
+       
+
+        return (
+           
+          <>
+          <Translate/>
+          </>
+        )
+    
+    }
+
+   
+
+
