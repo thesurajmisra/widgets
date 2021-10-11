@@ -3,6 +3,8 @@ import Accordion from './components/Accordion'
 import Dropdown from './components/Dropdown'
 import Search from './components/Search'
 import Translate from './components/Translate'
+import Route from './components/Route'
+import Header from './components/Header'
 
 
     const items = [
@@ -36,12 +38,28 @@ import Translate from './components/Translate'
     ]
 
     export default () => {
-       
-
-        return (
+        const [selected,setSelected] = useState(options[0]);
+ return (
            
           <>
-          <Translate/>
+          <Header/>
+          <Route path='/'>
+              <Accordion items={items} />
+          </Route>
+          <Route path = '/list'>
+              <Search/>
+          </Route>
+          <Route path = '/dropdown'>
+              <Dropdown 
+              label='Select a color'
+              selected={selected}
+              options={options}
+              onSelectedChange={setSelected}
+              />
+          </Route>
+          <Route path = '/translate'>
+              <Translate/>
+          </Route>
           </>
         )
     
